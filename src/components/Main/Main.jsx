@@ -2,12 +2,15 @@ import { useContext, useRef } from "react";
 import { assets } from "../../../assets/assets";
 import { Context } from "../../context/Context";
 import "./Main.css";
+import ContentFormatter from "../ContentFormatter";
 const Main = () => {
   const {
     onSent,
     recentPrompt,
     showResult,
+    setShowResult,
     loading,
+    setLoading,
     resultData,
     input,
     setInput,
@@ -30,7 +33,15 @@ const Main = () => {
   return (
     <div className="main">
       <div className="nav">
-        <p                                           >Chat Gemini</p>
+        <p
+          className="chat-gemini"
+          onClick={() => {
+            setLoading(false);
+            setShowResult(false);
+          }}
+        >
+          Chat Gemini
+        </p>
         <img src={assets.user_icon} alt="user icon" />
       </div>
       {showResult ? (
@@ -48,7 +59,7 @@ const Main = () => {
                 <hr />
               </div>
             ) : (
-              <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
+              <ContentFormatter content={resultData} />
             )}
           </div>
         </div>

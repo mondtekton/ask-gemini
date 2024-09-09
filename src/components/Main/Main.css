@@ -1,3 +1,7 @@
+.chat-gemini {
+  cursor: pointer;
+}
+
 .main {
   flex: 1;
   height: 100vh;
@@ -123,6 +127,7 @@
   font-weight: 300px;
 }
 .result {
+  font-family: "Poppins", system-ui;
   padding: 0px 15%;
   max-height: 70vh;
   overflow-y: scroll;
@@ -145,8 +150,10 @@
 
 .result-data {
   display: flex;
-  align-items: start;
+  flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
+  overflow-x: visible;
 }
 .result-data img {
   width: 40px;
