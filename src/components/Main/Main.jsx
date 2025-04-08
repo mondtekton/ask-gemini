@@ -1,8 +1,8 @@
 import { useContext, useRef } from "react";
 import { assets } from "../../../assets/assets";
 import { Context } from "../../context/Context";
-import "./Main.css";
 import ContentFormatter from "../ContentFormatter";
+import "./Main.css";
 const Main = () => {
   const {
     onSent,
@@ -40,7 +40,7 @@ const Main = () => {
             setShowResult(false);
           }}
         >
-          Chat Gemini
+          Ask Gemini
         </p>
         <img src={assets.user_icon} alt="user icon" />
       </div>
